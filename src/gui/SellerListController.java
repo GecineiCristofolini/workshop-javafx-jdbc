@@ -30,6 +30,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.entities.Department;
 import model.entities.Seller;
 import model.services.DepartmentService;
 import model.services.SellerService;
@@ -55,6 +56,9 @@ public class SellerListController implements Initializable,DataChangeListener {
 
 	@FXML
 	private TableColumn<Seller, Double> tableColumnBaseSalary;
+	
+	@FXML
+	private TableColumn<Seller, Department> tableColumnDepatment;
 	
 	@FXML
 	private TableColumn<Seller, Seller> tableColumnEDIT;
@@ -94,6 +98,11 @@ public class SellerListController implements Initializable,DataChangeListener {
 		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
 		tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		tableColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		
+		
+		
+		tableColumnDepatment.setCellValueFactory(new PropertyValueFactory<>("department"));
+		
 		
 		tableColumnBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));		
 		Utils.formatTableColumnDate(tableColumnBirthDate, "dd/MM/yyyy");
